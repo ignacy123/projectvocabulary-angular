@@ -8,7 +8,7 @@
  * Controller of the projectvocabularyAngularApp
  */
 angular.module('projectvocabularyAngularApp')
-  .controller('MainCtrl', function () {
+  .controller('LoginCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
