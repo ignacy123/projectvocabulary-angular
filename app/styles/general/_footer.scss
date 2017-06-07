@@ -1,0 +1,33 @@
+// FOOTER //////////////////////////////////////////////////////////////////////////////////////////////
+
+#footer {
+	border-radius: 0;
+	margin: 0;
+	ul {
+		@include respondto(visible-xs, visible-sm) {
+			float: none !important;
+		}
+		li {
+			@include respondto(visible-xs, visible-sm) {
+				text-align: center;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+				float: none;
+				display: block;
+			}
+			a {
+				font-weight: bold;
+			}
+		}
+	}
+	.copyRights {
+		color: #666;
+		float: right;
+		line-height: 50px;
+		@include respondto(visible-xs, visible-sm) {
+			float: none;
+			text-align: center;
+		}
+
+	}
+
+}
