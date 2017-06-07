@@ -1,10 +1,20 @@
-#login {
+#login-wrapper {
   height: 100%;
-}
-div {
-  height:1000px;
+
+  #login-container{
+
+    width:100%;
+    #login{
+      text-align: center;
+      md-input-container{
+        text-align: left;
+      }
+    }
+  }
+
+
+  button{
+
+  }
 }
 
-body{
-  background: pink !important;
-}
