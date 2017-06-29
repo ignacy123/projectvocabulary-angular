@@ -31,6 +31,16 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/root', {
+        templateUrl: 'features/root/views/root.html',
+        controller: 'RootCtrl',
+        controllerAs: 'root'
+      })
+      .when('/register', {
+        templateUrl: 'features/register/views/register.html',
+        controller: 'RegisterCtrl',
+        controllerAs: 'register'
+      })
       .otherwise({
         redirectTo: '/'
       });

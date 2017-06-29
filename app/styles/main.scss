@@ -1,4 +1,5 @@
 // bower:scss
+@import "font-awesome/scss/font-awesome.scss";
 // endbower
 
 .browsehappy {
@@ -30,4 +31,5 @@
 // FEATURES ////////////////////////////////////////////////////////////////////////////////
 
 @import '../features/login/styles/login';
+@import '../features/root/styles/root';
 //@import '../features/about/styles/about';

@@ -1,0 +1,47 @@
+<div id="login-wrapper" layout="column">
+  <div flex=""></div>
+  <div id="login-container" layout="row">
+    <div flex=""></div>
+    <div id="login-two" layout = "column">
+    <div id="login" layout="row">
+      <div id="login-splitter">
+        <md-input-container>
+          <label>First name</label>
+          <input ng-model="user.firstname"/>
+        </md-input-container>
+        <br/>
+        <md-input-container>
+          <label>Last Name</label>
+          <input ng-model="user.lastname"/>
+        </md-input-container>
+        <br/>
+        <md-input-container>
+          <label>Email</label>
+          <input ng-model="user.email"/>
+        </md-input-container>
+        <br/>
+      </div>
+      <div id="login-splitter-two">
+        <md-input-container>
+          <label>Password</label>
+          <input ng-model="user.password" type="password"/>
+        </md-input-container>
+        <br/>
+        <md-input-container>
+          <label>Confirm password</label>
+          <input ng-model="user.passwordconfirmation" type="password"/>
+        </md-input-container>
+        <br/>
+        <md-input-container>
+          <label>Uid (this field is optional)</label>
+          <input ng-model="user.uid"/>
+        </md-input-container>
+        <br/>
+      </div>
+    </div>
+    <md-button ng-href="#!/register">Register</md-button>
+    </div>
+    <div flex=""></div>
+  </div>
+  <div flex=""></div>
+</div>
