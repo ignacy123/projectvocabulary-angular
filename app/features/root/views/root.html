@@ -1,12 +1,13 @@
-<div id="root-wrapper" layout="column">
+<div id="root-wrapper" ng-controller="RootCtrl" layout="column">
   <div flex=""></div>
   <div id="button-wrapper">
     <md-button id="begin" md-no-ink class="md-primary"><a id="session">BEGIN YOUR SESSION</a></md-button>
   </div>
+
   <div flex=""></div>
   <div class="md-fab-toolbar-background">
-    <md-fab-toolbar md-open="false"
-                    md-direction="left">
+    <md-fab-toolbar md-open="fab.isOpen" count="fab.count";
+                    md-direction="{{fab.selectedDirection}}">
       <md-fab-trigger class="align-with-text">
         <md-button aria-label="menu" class="md-fab md-primary">
           <i class="fa fa-plus"></i>

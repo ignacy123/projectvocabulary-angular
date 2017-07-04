@@ -8,10 +8,15 @@
  * Controller of the projectvocabularyAngularApp
  */
 angular.module('projectvocabularyAngularApp')
-  .controller('RootCtrl', function () {
+  .controller('RootCtrl', function ($scope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+    $scope.fab = {
+      isOpen: false,
+      count: 0,
+      selectedDirection: 'left'
+    };
   });

@@ -1,4 +1,4 @@
-<div id="login-wrapper" layout="column">
+<div id="login-wrapper" ng-controller="RegisterCtrl" layout="column">
   <div flex=""></div>
   <div id="login-container" layout="row">
     <div flex=""></div>
@@ -39,7 +39,7 @@
         <br/>
       </div>
     </div>
-    <md-button ng-href="#!/register">Register</md-button>
+    <md-button ng-click="submit()">Register</md-button>
     </div>
     <div flex=""></div>
   </div>
