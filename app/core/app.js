@@ -17,7 +17,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ngMaterial'
+    'ngMaterial',
+    'projectvocabulary.api',
+    'projectvocabulary.utils'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -40,6 +42,11 @@ angular
         templateUrl: 'features/register/views/register.html',
         controller: 'RegisterCtrl',
         controllerAs: 'register'
+      })
+      .when('/userdata', {
+        templateUrl: 'features/userdata/views/userdata.html',
+        controller: 'UserdataCtrl',
+        controllerAs: 'Userdata'
       })
       .otherwise({
         redirectTo: '/'

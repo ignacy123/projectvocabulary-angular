@@ -8,19 +8,20 @@
  * Controller of the projectvocabularyAngularApp
  */
 angular.module('projectvocabularyAngularApp')
-  .controller('RootCtrl', function ($scope, User) {
+  .controller('UserdataCtrl', function ($scope, User) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
-    ];
-    $scope.fab = {
-      isOpen: false,
-      count: 0,
-      selectedDirection: 'left'
-    };
-
-    $scope.logout = function () {
-      User.logout()
+    ]
+    var user = User.user();
+    $scope.getFirstName = function(){
+      console.log(user.firstName)
+    }
+    $scope.getLastName = function(){
+      return user.lastName;
+    }
+    $scope.getEmail = function(){
+      return user.email;
     }
   });

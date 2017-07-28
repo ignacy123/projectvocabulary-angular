@@ -28,7 +28,7 @@
   <md-toolbar class="md-hue-2" md-scroll-shrink ng-if="true">
     <div class="md-toolbar-tools">
       <div>
-        <md-button>
+        <md-button ng-href="#!/">
           PROJECT VOCABULARY
         </md-button>
       </div>
@@ -77,11 +77,20 @@
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="api/api.module.js"></script>
+<script src="api/services/user.service.js"></script>
 <script src="core/app.js"></script>
+<script src="utils/utils.module.js"></script>
 <script src="features/login/controllers/login.controller.js"></script>
 <script src="features/about/controllers/about.controller.js"></script>
 <script src="features/root/controllers/root.controller.js"></script>
 <script src="features/register/controllers/register.controller.js"></script>
+<script src="features/userdata/controllers/userdata.controller.js"></script>
+<script src="utils/directives/compareTo.directive.js"></script>
+<script type="text/ng-template" id="error-messages">
+  <div ng-message="required">This field is required.</div>
+  <div ng-message="minlength">This field is too short.</div>
+</script>
 <!-- endbuild -->
 </body>
 </html>

@@ -9,8 +9,8 @@
     <md-fab-toolbar md-open="fab.isOpen" count="fab.count";
                     md-direction="{{fab.selectedDirection}}">
       <md-fab-trigger class="align-with-text">
-        <md-button aria-label="menu" class="md-fab md-primary">
-          <i class="fa fa-plus"></i>
+        <md-button aria-label="menu" class="md-fab md-primary" >
+          <md-icon ng-md-icon style="display: unset"><i class="fa fa-plus"></i></md-icon>
         </md-button>
       </md-fab-trigger>
 
@@ -18,6 +18,12 @@
         <md-fab-actions class="md-toolbar-tools" >
           <md-button aria-label="comment" class="md-icon-button">
             <i class="fa fa-plus"></i>
+          </md-button>
+          <md-button aria-label="comment" class="md-icon-button" ng-href="#!/userdata">
+            <i class="fa fa-user-circle-o"></i>
+          </md-button>
+          <md-button aria-label="comment" class="md-icon-button" ng-click="logout()">
+            <i class="fa fa-sign-out"></i>
           </md-button>
         </md-fab-actions>
       </md-toolbar>
