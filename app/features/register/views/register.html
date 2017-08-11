@@ -35,8 +35,7 @@
           <div id="login-splitter-two">
             <md-input-container>
               <label>Password</label>
-              <input ng-model="user.password" ng-pattern="/.*[A-Z].*/" minlength="8" required name="password"
-                     type="password"/>
+              <input ng-model="user.password" type="password" ng-pattern="/.*[A-Z].*/" minlength="8" required name="password" />
               <div ng-messages="registrationForm.password.$error">
                 <div ng-messages-include="error-messages"></div>
                 <div ng-message="pattern">Password must contain at least one upper letter.</div>
