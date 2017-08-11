@@ -12,6 +12,12 @@
         <label>Password</label>
         <input ng-model="user.password" type="password"/>
       </md-input-container>
+    </br>
+      <md-input-container>
+        <md-checkbox md-no-ink ng-model="remember" class="md-primary">
+          Remember me
+        </md-checkbox>
+      </md-input-container>
       <br/>
       <div id="button-wrapper" layout="column">
         <md-button ng-click="submit()">Login</md-button>
