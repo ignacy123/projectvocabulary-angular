@@ -2,14 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TopComponent } from './top/top.component';
 import { BottomComponent } from './bottom/bottom.component';
+import { MatToolbarModule } from '@angular/material';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MatToolbarModule
   ],
   exports:[
     TopComponent,
-    BottomComponent
+    BottomComponent,
+    MatToolbarModule
   ],
   declarations: [TopComponent, BottomComponent]
 })
