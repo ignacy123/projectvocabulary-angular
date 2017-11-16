@@ -3,13 +3,18 @@ import {Location} from '@angular/common';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 
 const appRoutes: Routes = [
-  {path: 'sign-in', loadChildren: 'app/modules/authentication/authentication.module#authenticationModule'},
+  {path: 'sign-in', loadChildren: 'app/modules/authentication/authentication.module#AuthenticationModule'},
   {path: '', redirectTo: 'sign-in', pathMatch: 'prefix'},
   {path: '**', redirectTo: 'sign-in'}
 ];
 
 @NgModule({
   imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
+    // other imports here
     ],
   exports: [RouterModule]
 })
