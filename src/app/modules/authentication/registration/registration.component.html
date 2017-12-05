@@ -1,3 +1,33 @@
-<p>
-  registration works!
-</p>
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Email">
+  </mat-form-field>
+</div>
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Password" value="" [type]="hide ? 'password' : 'text'">
+  </mat-form-field>
+</div>
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Confirm password" value="" [type]="hide ? 'password' : 'text'">
+  </mat-form-field>
+</div>
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="First name">
+  </mat-form-field>
+</div>
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Last name">
+  </mat-form-field>
+</div>
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Uid (optional)">
+  </mat-form-field>
+</div>
+<div class="button-row">
+  <button mat-button color="primary">Register</button>
+</div>
