@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',

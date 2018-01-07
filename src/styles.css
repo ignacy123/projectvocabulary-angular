@@ -309,6 +309,11 @@ html, body {
   margin: 0;
   overflow: hidden; }
 
+#wrap {
+  height: 100%;
+  width: 100%;
+  box-sizing: content-box; }
+
 #content {
   height: 100%; }
 
