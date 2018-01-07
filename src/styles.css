@@ -1,4 +1,339 @@
 /* You can add global styles to this file, and also import other style files */
 @import url(~@angular/material/prebuilt-themes/indigo-pink.css);
+/**
+ * Responsive mixin. The media breakpoints are as defined
+ * in the Angular Material
+ *
+ * Additional parameters for tagetting retina and non-retina
+ * devices
+ *
+ * - retina
+ * - non-retina
+ *
+ * Moreover, a specific value in px can be passed which is
+ * used to generate a min-width media query.
+ */
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,700|Roboto:300,300i,400,700&subset=latin-ext");
+.z-1 {
+  z-index: 1; }
+
+.z-2 {
+  z-index: 2; }
+
+.z-3 {
+  z-index: 3; }
+
+.z-4 {
+  z-index: 4; }
+
+.z-5 {
+  z-index: 5; }
+
+.z-6 {
+  z-index: 6; }
+
+.z-7 {
+  z-index: 7; }
+
+.z-8 {
+  z-index: 8; }
+
+.z-9 {
+  z-index: 9; }
+
+.z-10 {
+  z-index: 10; }
+
+.z-11 {
+  z-index: 11; }
+
+.z-12 {
+  z-index: 12; }
+
+.z-13 {
+  z-index: 13; }
+
+.z-14 {
+  z-index: 14; }
+
+.z-15 {
+  z-index: 15; }
+
+.z-16 {
+  z-index: 16; }
+
+.z-17 {
+  z-index: 17; }
+
+.z-18 {
+  z-index: 18; }
+
+.z-19 {
+  z-index: 19; }
+
+.z-20 {
+  z-index: 20; }
+
+.z-21 {
+  z-index: 21; }
+
+.z-22 {
+  z-index: 22; }
+
+.z-23 {
+  z-index: 23; }
+
+.z-24 {
+  z-index: 24; }
+
+.z-25 {
+  z-index: 25; }
+
+.z-26 {
+  z-index: 26; }
+
+.z-27 {
+  z-index: 27; }
+
+.z-28 {
+  z-index: 28; }
+
+.z-29 {
+  z-index: 29; }
+
+.z-30 {
+  z-index: 30; }
+
+.z-31 {
+  z-index: 31; }
+
+.z-32 {
+  z-index: 32; }
+
+.z-33 {
+  z-index: 33; }
+
+.z-34 {
+  z-index: 34; }
+
+.z-35 {
+  z-index: 35; }
+
+.z-36 {
+  z-index: 36; }
+
+.z-37 {
+  z-index: 37; }
+
+.z-38 {
+  z-index: 38; }
+
+.z-39 {
+  z-index: 39; }
+
+.z-40 {
+  z-index: 40; }
+
+.z-41 {
+  z-index: 41; }
+
+.z-42 {
+  z-index: 42; }
+
+.z-43 {
+  z-index: 43; }
+
+.z-44 {
+  z-index: 44; }
+
+.z-45 {
+  z-index: 45; }
+
+.z-46 {
+  z-index: 46; }
+
+.z-47 {
+  z-index: 47; }
+
+.z-48 {
+  z-index: 48; }
+
+.z-49 {
+  z-index: 49; }
+
+.z-50 {
+  z-index: 50; }
+
+.z-51 {
+  z-index: 51; }
+
+.z-52 {
+  z-index: 52; }
+
+.z-53 {
+  z-index: 53; }
+
+.z-54 {
+  z-index: 54; }
+
+.z-55 {
+  z-index: 55; }
+
+.z-56 {
+  z-index: 56; }
+
+.z-57 {
+  z-index: 57; }
+
+.z-58 {
+  z-index: 58; }
+
+.z-59 {
+  z-index: 59; }
+
+.z-60 {
+  z-index: 60; }
+
+.z-61 {
+  z-index: 61; }
+
+.z-62 {
+  z-index: 62; }
+
+.z-63 {
+  z-index: 63; }
+
+.z-64 {
+  z-index: 64; }
+
+.z-65 {
+  z-index: 65; }
+
+.z-66 {
+  z-index: 66; }
+
+.z-67 {
+  z-index: 67; }
+
+.z-68 {
+  z-index: 68; }
+
+.z-69 {
+  z-index: 69; }
+
+.z-70 {
+  z-index: 70; }
+
+.visible-md-only {
+  display: none; }
+
+@media only screen and (max-width: visible-mdpx) {
+  .hidden-md {
+    display: none !important; }
+
+  .visible-md-only {
+    display: block; } }
+@media (min-width: 960px) and (max-width: 1279px) {
+  .hidden-md-up {
+    display: none !important; } }
+@media (max-width: 599px) {
+  .hidden-sm-xs {
+    display: none !important; } }
+@media (min-width: 600px) and (max-width: 959px) {
+  .hidden-sm-xs {
+    display: none !important; } }
+@media (max-width: 599px) {
+  .hidden-xs {
+    display: none !important; } }
+.preload {
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  -ms-opacity: 0;
+  -o-opacity: 0;
+  opacity: 0; }
+  .preload.ready {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -ms-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+    -webkit-transition: 700ms linear opacity;
+    -moz-transition: 700ms linear opacity;
+    -ms-transition: 700ms linear opacity;
+    -o-transition: 700ms linear opacity;
+    transition: 700ms linear opacity; }
+
+/*
+  Allow angular.js to be loaded in body, hiding cloaked elements until
+  templates compile.  The !important is important given that there may be
+  other selectors that are more specific or come later and might alter display.
+ */
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important; }
+
+.noWrap {
+  white-space: nowrap; }
+
+.error {
+  padding: 10px 0;
+  font-size: 13px;
+  color: red; }
+
+.clear {
+  clear: both; }
+
+.hidden {
+  display: none; }
+
+.text-center {
+  text-align: center; }
+
+.full-height {
+  height: 100%; }
+
+.avatar {
+  border-radius: 200px;
+  width: 40px;
+  height: 40px; }
+  .avatar.avatar-lg {
+    height: 65px;
+    width: 65px; }
+  .avatar.avatar-xl {
+    height: 100px !important;
+    width: 100px !important; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden; }
+
+#content {
+  height: 100%; }
+
+.container-narrow > hr {
+  margin: 30px 0; }
+
+.container {
+  height: auto;
+  box-sizing: border-box;
+  width: 100%;
+  margin: auto;
+  max-width: 768px;
+  position: relative; }
+  @media (min-width: 960px) {
+    .container {
+      max-width: 992px; } }
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1200px; } }
+  @media (min-width: 1600px) {
+    .container {
+      max-width: 1332px; } }
+  @media (max-width: 599px) {
+    .container {
+      overflow-y: auto;
+      overflow-x: hidden; } }
 
 /*# sourceMappingURL=styles.css.map */

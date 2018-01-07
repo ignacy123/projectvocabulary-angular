@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TopComponent } from './top/top.component';
 import { BottomComponent } from './bottom/bottom.component';
 import { MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { FlexLayoutModule} from '@angular/flex-layout'
 
 
 
@@ -12,7 +13,8 @@ import { MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule }
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FlexLayoutModule
   ],
   exports:[
     TopComponent,
@@ -20,7 +22,8 @@ import { MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule }
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FlexLayoutModule
     ],
   declarations: [TopComponent, BottomComponent]
 })

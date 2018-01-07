@@ -1,33 +1,35 @@
-<div class="example-container">
-  <mat-form-field>
-    <input matInput placeholder="Email">
-  </mat-form-field>
-</div>
-<div class="example-container">
-  <mat-form-field>
-    <input matInput placeholder="Password" value="" [type]="hide ? 'password' : 'text'">
-  </mat-form-field>
-</div>
-<div class="example-container">
-  <mat-form-field>
-    <input matInput placeholder="Confirm password" value="" [type]="hide ? 'password' : 'text'">
-  </mat-form-field>
-</div>
-<div class="example-container">
-  <mat-form-field>
-    <input matInput placeholder="First name">
-  </mat-form-field>
-</div>
-<div class="example-container">
-  <mat-form-field>
-    <input matInput placeholder="Last name">
-  </mat-form-field>
-</div>
-<div class="example-container">
-  <mat-form-field>
-    <input matInput placeholder="Uid (optional)">
-  </mat-form-field>
-</div>
-<div class="button-row">
-  <button mat-button color="primary">Register</button>
+<div fxLayout="column" fxLayoutAlign="space-around center" class="container">
+  <div class="email-container">
+    <mat-form-field>
+      <input matInput placeholder="Email">
+    </mat-form-field>
+  </div>
+  <div class="password-container">
+    <mat-form-field>
+      <input matInput placeholder="Password" value="" [type]="hide ? 'password' : 'text'">
+    </mat-form-field>
+  </div>
+  <div class="passwordconfirmation-container">
+    <mat-form-field>
+      <input matInput placeholder="Confirm password" value="" [type]="hide ? 'password' : 'text'">
+    </mat-form-field>
+  </div>
+  <div class="firstname-container">
+    <mat-form-field>
+      <input matInput placeholder="First name">
+    </mat-form-field>
+  </div>
+  <div class="lastname-container">
+    <mat-form-field>
+      <input matInput placeholder="Last name">
+    </mat-form-field>
+  </div>
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Uid (optional)">
+    </mat-form-field>
+  </div>
+  <div class="button-register">
+    <button mat-button color="primary">Register</button>
+  </div>
 </div>
