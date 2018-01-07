@@ -8,7 +8,7 @@ import { AppRoutingModule } from "core/core.routing";
     AppRoutingModule
   ],
   exports: [
-    AppRoutingModule
+    AppRoutingModule,
   ],
   declarations: []
 })
