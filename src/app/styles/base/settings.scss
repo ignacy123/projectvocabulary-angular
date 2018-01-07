@@ -8,6 +8,13 @@ html, body {
 	overflow: hidden;
 }
 
+#wrap {
+	height: 100%;
+	width: 100%;
+	//padding-top: 65px;
+	box-sizing: content-box;
+}
+
 #content {
 	height: 100%;
 }
