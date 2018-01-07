@@ -1,0 +1,226 @@
+// ANIMATIONS /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@mixin backgroundAnimation($name,$color,$percentage) {
+	@at-root (without: media) {
+		@-webkit-keyframes glowBg#{$name} {
+			0% {
+				background: lighten($color, $percentage);
+			}
+			100% {
+				background: $color;
+			}
+		}
+		@-moz-keyframes glowBg#{$name} {
+			0% {
+				background: lighten($color, $percentage);
+			}
+			100% {
+				background: $color;
+			}
+		}
+		@-o-keyframes glowBg#{$name} {
+			0% {
+				background: lighten($color, $percentage);
+			}
+			100% {
+				background: $color;
+			}
+		}
+		@keyframes glowBg#{$name} {
+			0% {
+				background: lighten($color, $percentage);
+			}
+			100% {
+				background: $color;
+			}
+		}
+	}
+
+	-webkit-animation: glowBg+$name 0.5s infinite alternate; /* Safari 4+ */
+	-moz-animation:    glowBg+$name 0.5s infinite alternate; /* Fx 5+ */
+	-o-animation:      glowBg+$name 0.5s infinite alternate; /* Opera 12+ */
+	animation:         glowBg+$name 0.5s infinite alternate; /* IE 10+, Fx 29+ */
+}
+
+@mixin rotate3d($name, $speed: 2.0, $size: 300 , $duration: infinite) {
+	@at-root (without: media) {
+		@-webkit-keyframes rot3d#{$name} {
+			0% {
+				-webkit-transform: perspective($size+px) rotateY(0deg);
+			}
+			100% {
+				-webkit-transform: perspective($size+px) rotateY(360deg);
+			}
+		}
+		@-moz-keyframes rot3d#{$name} {
+			0% {
+				-moz-transform: perspective($size+px) rotateY(0deg);
+			}
+			100% {
+				-moz-transform: perspective($size+px) rotateY(360deg);
+			}
+		}
+		@-o-keyframes rot3d#{$name} {
+			0% {
+				-o-transform: perspective($size+px) rotateY(0deg);
+			}
+			100% {
+				-o-transform: perspective($size+px) rotateY(360deg);
+			}
+		}
+		@keyframes rot3d#{$name} {
+			0% {
+				transform: perspective($size+px) rotateY(0deg);
+			}
+			100% {
+				transform: perspective($size+px) rotateY(360deg);
+			}
+		}
+	}
+	-webkit-animation: rot3d+$name $speed+s infinite linear; /* Safari 4+ */
+	-moz-animation:    rot3d+$name $speed+s infinite linear; /* Fx 5+ */
+	-o-animation:      rot3d+$name $speed+s infinite linear; /* Opera 12+ */
+	animation:         rot3d+$name $speed+s infinite linear; /* IE 10+, Fx 29+ */
+
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+@mixin transition($time: 500, $type: ease-in, $affects: all){
+	-webkit-transition: $time+ms $type $affects;
+	-moz-transition: $time+ms $type $affects;
+	-ms-transition: $time+ms $type $affects;
+	-o-transition: $time+ms $type $affects;
+	transition: $time+ms $type $affects;
+}
+
+@mixin transform($effect){
+	-webkit-transform: $effect;
+	-moz-transform: $effect;
+	-ms-transform: $effect;
+	-o-transform: $effect;
+	transform: $effect;
+}
+
+@mixin strokeText($distance, $glow: 0, $color: #000){
+	text-shadow:
+			$distance+px $distance+px $glow $color,
+			$distance+px (-$distance)+px $glow $color,
+			(-$distance)+px $distance+px $glow $color,
+			(-$distance)+px (-$distance)+px $glow $color;
+}
+
+@mixin crossBrowser($style,$value){
+	-webkit-#{$style}: #{$value};
+	-moz-#{$style}: #{$value};
+	-ms-#{$style}: #{$value};
+	-o-#{$style}: #{$value};
+	#{$style}: #{$value};
+}
+
+@mixin orbit ($name,$time,$modifier,$skewX,$skewY,$perspective,$rotateY,$startScale,$middleScale){
+	@at-root (without: media) {
+		@-webkit-keyframes myOrbit_#{$name} {
+			from { -webkit-transform: rotate($modifier+deg) translateX(150%) rotate($modifier+deg) skewX($skewX+deg) skewY($skewY+deg) perspective($perspective+px) rotateY(0deg) scale($startScale,$startScale); }
+			50% { -webkit-transform: rotate($modifier+(-180)+deg) translateX(150%) rotate($modifier+180+deg) skewX($skewX+deg) skewY($skewY+deg) perspective($perspective+px) rotateY($rotateY/2+deg) scale($middleScale,$middleScale); }
+			to { -webkit-transform: rotate($modifier+(-360)+deg) translateX(150%) rotate($modifier+360+deg) skewX($skewX+deg) skewY($skewY+deg) perspective($perspective+px) rotateY($rotateY+deg) scale($startScale,$startScale); }
+		}
+		@-moz-keyframes myOrbit_#{$name} {
+			0% { -moz-transform: rotate($modifier+deg) translateX(150%) rotate($modifier+deg) skewX($skewX+deg) skewY($skewY+deg) perspective($perspective+px) rotateY(0deg) scale($startScale,$startScale); }
+			50% { -moz-transform: rotate($modifier+(-180)+deg) translateX(150%) rotate($modifier+180+deg) skewX($skewX+deg) skewY($skewY+deg) perspective($perspective+px) rotateY($rotateY/2+deg) scale($middleScale,$middleScale); }
+			100%  { -moz-transform: rotate($modifier+(-360)+deg) translateX(150%) rotate($modifier+360+deg) skewX($skewX+deg) skewY($skewY+deg) perspective($perspective+px) rotateY($rotateY+deg) scale($startScale,$startScale); }
+		}
+		@-o-keyframes myOrbit_#{$name} {
+			0% { -o-transform: rotate($modifier+deg) translateX(150%) rotate($modifier+deg) skewX($skewX+deg) skewY($skewY+deg) perspective($perspective+px) rotateY(0deg) scale($startScale,$startScale); }
+			50% { -o-transform: rotate($modifier+(-180)+deg) translateX(150%) rotate($modifier+180+deg) skewX($skewX+deg) skewY($skewY+deg) perspective($perspective+px) rotateY($rotateY/2+deg) scale($middleScale,$middleScale); }
+			100%  { -o-transform: rotate($modifier+(-360)+deg) translateX(150%) rotate($modifier+360+deg) skewX($skewX+deg) skewY($skewY+deg) perspective($perspective+px) rotateY($rotateY+deg) scale($startScale,$startScale); }
+		}
+		@keyframes myOrbit_#{$name} {
+			from { transform: rotate($modifier+deg) translateX(150%) rotate($modifier+deg) skewX($skewX+deg) skewY($skewY+deg) perspective($perspective+px) rotateY(0deg) scale($startScale,$startScale); }
+			50% { transform: rotate($modifier+(-180)+deg) translateX(150%) rotate($modifier+180+deg) skewX($skewX+deg) skewY($skewY+deg) perspective($perspective+px) rotateY($rotateY/2+deg) scale($middleScale,$middleScale); }
+			to  { transform: rotate($modifier+(-360)+deg) translateX(150%) rotate($modifier+360+deg) skewX($skewX+deg) skewY($skewY+deg) perspective($perspective+px) rotateY($rotateY+deg) scale($startScale,$startScale); }
+		}
+	}
+	/*
+	 * Sets up the animation duration, timing-function (or easing)
+	 * and iteration-count. Ensure you use the appropriate vendor-specific
+	 * prefixes as well as the official syntax for now. Remember, tools like
+	 * CSS Please are your friends!
+	 */
+	-webkit-animation: myOrbit_#{$name} $time+s linear infinite; /* Chrome, Safari 5 */
+	-moz-animation: myOrbit_#{$name} $time+s linear infinite; /* Firefox 5-15 */
+	-o-animation: myOrbit_#{$name} $time+s linear infinite; /* Opera 12+ */
+	animation: myOrbit_#{$name} $time+s linear infinite; /* Chrome, Firefox 16+, IE 10+, Safari 5 */
+	-webkit-animation-delay: 5ms;
+
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+@mixin flyAnimation($name,$moveX,$moveY,$scale,$time,$direction) {
+	@at-root (without: media) {
+		@if $direction==r {
+			$moveX: -$moveX;
+			@keyframes flyAnimation#{$name} {
+				0% {
+					transform: translate(0px, 0px) scale($scale,$scale);
+				}
+				50% {
+					transform: translate($moveX + px, $moveY + px) scale($scale*0.9,$scale*0.9);
+				}
+				100% {
+					transform: translate(-$moveX + px, $moveY/2 + px) scale($scale,$scale);
+				}
+			}
+		} @else {
+			@keyframes flyAnimation#{$name} {
+				0% {
+					transform: translate(0px, 0px) scale($scale,$scale);
+				}
+				50% {
+					transform: translate($moveX + px, $moveY + px) scale($scale*0.9,$scale*0.9);
+				}
+				100% {
+					transform: translate(-$moveX + px, $moveY/2 + px) scale($scale,$scale);
+				}
+			}
+		}
+	}
+
+	-webkit-animation: flyAnimation+$name $time+s infinite alternate; /* Safari 4+ */
+	-moz-animation:    flyAnimation+$name $time+s infinite alternate; /* Fx 5+ */
+	-o-animation:      flyAnimation+$name $time+s infinite alternate; /* Opera 12+ */
+	animation:         flyAnimation+$name $time+s infinite alternate; /* IE 10+, Fx 29+ */
+
+	-webkit-animation-delay: 5ms;
+}
+
+@mixin shakeAnimation($name,$rotate,$scale,$time) {
+	@at-root (without: media) {
+			@keyframes shakeAnimation#{$name} {
+				0% {
+					transform: rotate(0deg) scale($scale,$scale);
+				}
+				50% {
+					transform: rotate($rotate + deg) scale($scale*0.95,$scale*0.95);
+				}
+				100% {
+					transform: rotate(0deg) scale($scale,$scale);
+				}
+			}
+	}
+
+	-webkit-animation: shakeAnimation+$name $time+s infinite alternate; /* Safari 4+ */
+	-moz-animation:    shakeAnimation+$name $time+s infinite alternate; /* Fx 5+ */
+	-o-animation:      shakeAnimation+$name $time+s infinite alternate; /* Opera 12+ */
+	animation:         shakeAnimation+$name $time+s infinite alternate; /* IE 10+, Fx 29+ */
+
+	-webkit-animation-delay: 5ms;
+}
+

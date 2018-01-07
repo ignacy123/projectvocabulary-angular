@@ -1,0 +1,51 @@
+// MAIN /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+html, body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background: $dark-navy-blue;
+}
+
+#wrap {
+	height: 100%;
+	width: 100%;
+	//padding-top: 65px;
+	box-sizing: content-box;
+}
+
+#content {
+	height: 100%;
+}
+
+.container-narrow > hr {
+	margin: 30px 0;
+}
+
+.container {
+	height: auto;
+	box-sizing: border-box;
+	width: 100%;
+	margin: auto;
+	max-width: 768px;
+	position: relative;
+	@include respondto(gt-sm) {
+		max-width: 992px;
+	}
+	@include respondto(gt-md) {
+		max-width: 1200px;
+	}
+	@include respondto(gt-lg) {
+		max-width: 1332px;
+	}
+	@include respondto(xs) {
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+}

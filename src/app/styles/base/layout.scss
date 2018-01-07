@@ -1,0 +1,94 @@
+// RESPONSIVE /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Responsive mixin. The media breakpoints are as defined
+ * in the Angular Material
+ *
+ * Additional parameters for tagetting retina and non-retina
+ * devices
+ *
+ * - retina
+ * - non-retina
+ *
+ * Moreover, a specific value in px can be passed which is
+ * used to generate a min-width media query.
+ */
+
+
+// Compatibile with Angular 2+ FlexLayout
+
+@mixin mediaSize($media) {
+	// Landscape phones and down
+	@if $media == xs {
+		@media (max-width: 599px) { @content; }
+	}
+	@else if $media == gt-xs{
+		@media (min-width: 600px) {@content; }
+	}
+	@else if $media == lt-sm {
+		@media (max-width: 599px) { @content; }
+	}
+	@else if $media == sm {
+		@media (min-width: 600px) and (max-width: 959px) { @content; }
+	}
+	@else if $media == gt-sm {
+		@media (min-width: 960px) { @content; }
+	}
+	@else if $media == lt-md {
+		@media (max-width: 959px) { @content; }
+	}
+	@else if $media == md {
+		@media (min-width: 960px) and (max-width: 1279px) { @content; }
+	}
+	@else if $media == gt-md {
+		@media (min-width: 1280px) { @content; }
+	}
+	@else if $media == lt-lg {
+		@media (max-width: 1279px) { @content; }
+	}
+	@else if $media == lg {
+		@media (min-width: 1280px) and (max-width: 1919px) { @content; }
+	}
+	@else if $media == gt-lg {
+		@media (min-width: 1600px) { @content; }
+	}
+	@else if $media == lt-xl {
+		@media (max-width: 1919px) { @content; }
+	}
+	@else if $media == xl {
+		@media (min-width: 1920px) { @content; }
+	}
+		// Retina & non-Retina
+	@else if $media == non-retina {
+		@media screen and (-webkit-max-device-pixel-ratio: 1) { @content; }
+	}
+	@else if $media == retina {
+		@media screen and (-webkit-min-device-pixel-ratio: 2) { @content; }
+	}
+		// Specific min width
+	@else {
+		@media only screen and (max-width: #{$media}px) { @content; }
+	}
+
+	// height related queriers - every 100px
+	$i: 300;
+	@while $i <= 2000 {
+		@if $media == maxHeight + $i {
+			@media (max-height: $i + px) { @content; }
+		}
+		$i: $i + 50;
+	}
+	@while $i >= 300 {
+		@if $media == minHeight + $i {
+			@media (max-height: $i + px) { @content; }
+		}
+		$i: $i - 50;
+	}
+
+}
+
+@mixin respondto($media...) {
+	@each $mediatype in $media {
+		@include mediaSize($mediatype) {@content}
+	}
+}
