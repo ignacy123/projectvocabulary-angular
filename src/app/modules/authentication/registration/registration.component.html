@@ -1,35 +1,55 @@
-<div fxLayout="column" fxLayoutAlign="space-around center" class="container">
-  <div class="email-container">
-    <mat-form-field>
-      <input matInput placeholder="Email">
-    </mat-form-field>
-  </div>
-  <div class="password-container">
-    <mat-form-field>
-      <input matInput placeholder="Password" value="" [type]="hide ? 'password' : 'text'">
-    </mat-form-field>
-  </div>
-  <div class="passwordconfirmation-container">
-    <mat-form-field>
-      <input matInput placeholder="Confirm password" value="" [type]="hide ? 'password' : 'text'">
-    </mat-form-field>
-  </div>
-  <div class="firstname-container">
-    <mat-form-field>
-      <input matInput placeholder="First name">
-    </mat-form-field>
-  </div>
-  <div class="lastname-container">
-    <mat-form-field>
-      <input matInput placeholder="Last name">
-    </mat-form-field>
-  </div>
-  <div class="example-container">
-    <mat-form-field>
-      <input matInput placeholder="Uid (optional)">
-    </mat-form-field>
+<div fxLayout="column" fxLayoutAlign="space-around center" class="container full-width">
+  <div fxLayout="row" fxLayoutAlign="space-around center" class="mid-width" >
+    <div class="column">
+      <div class="email-container">
+        <mat-form-field>
+          <input matInput placeholder="Email" [formControl]="email">
+          <mat-error *ngIf="email.hasError('email') || !email.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="password-container">
+        <mat-form-field>
+          <input matInput placeholder="Password" type="password" value=""
+                 [formControl]="password">
+          <mat-error *ngIf="password.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="passwordconfirmation-container">
+        <mat-form-field>
+          <input matInput placeholder="Confirm password" type="password" value=""
+                 [formControl]="passwordConfirmation">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="column">
+      <div class="firstname-container">
+        <mat-form-field>
+          <input matInput placeholder="First name" [formControl]="firstName">
+          <mat-error *ngIf="firstName.hasError('required')">
+            First name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="lastname-container">
+        <mat-form-field>
+          <input matInput placeholder="Last name" [formControl]="lastName">
+          <mat-error *ngIf="lastName.hasError('required')">
+            Last name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="example-container">
+        <mat-form-field>
+          <input matInput placeholder="Uid (optional)" [formControl]="uid">
+        </mat-form-field>
+      </div>
+    </div>
   </div>
   <div class="button-register">
-    <button mat-button color="primary">Register</button>
+    <button mat-button color="primary" [disabled] = "lockButton()" (click)="register()">Register</button>
   </div>
 </div>

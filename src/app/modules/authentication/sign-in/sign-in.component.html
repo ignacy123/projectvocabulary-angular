@@ -11,10 +11,13 @@
       </mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Password" type="password">
+      <input matInput placeholder="Password" type="password" [formControl]="password">
+      <mat-error *ngIf="password.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
     </mat-form-field>
 
   </form>
-    <button mat-button color="primary">Sign in</button>
-    <button mat-button color="primary">Register</button>
+    <button mat-button color="primary" (click)="logIn()">Sign in</button>
+    <a [routerLink]="['/registration']" mat-button color="primary">Register</a>
 </div>
