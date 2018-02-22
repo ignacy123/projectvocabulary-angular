@@ -22,8 +22,13 @@ export class SignInComponent implements OnInit {
       .subscribe(
         res => {
           console.log(res);
+
           //TODO akcja wykonywana jeżeli ok
-          this.router.navigate(["/dashboard"]);
+          this.router.navigate(["/dashboard"], {
+            queryParams: {
+              id: res['id']
+            }
+          });
         },
         err => {
           console.log("Error occured");

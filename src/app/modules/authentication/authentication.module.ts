@@ -6,6 +6,7 @@ import { AuthenticationRoutingModule } from "module/authentication/authenticatio
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {LayoutModule} from 'layout/layout.module'
 import {AuthenticationService} from "module/authentication/utils/services/authentication.service";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import {AuthenticationService} from "module/authentication/utils/services/authen
     AuthenticationRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    LayoutModule
+    LayoutModule,
+    TranslateModule
   ],
   declarations: [SignInComponent, RegistrationComponent],
   providers: [AuthenticationService]
