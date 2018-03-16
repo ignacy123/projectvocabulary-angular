@@ -18,9 +18,8 @@ export class DashboardService {
     return this.api.post({}, "logout")
   }
 
-  getUserData(){
-    console.log(this.route.queryParams['id'])
-    return this.api.post({}, "users"+this.route.queryParams['id']);
+  getUserData(id: number){
+    return this.api.get("groups/get?groupId=2");
   }
 
 }

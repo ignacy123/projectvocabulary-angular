@@ -9,7 +9,7 @@ export class AuthenticationService {
   }
 
   logIn(email: string, password: string) {
-    return this.api.post({email: email, password: password}, 'login')
+    return this.api.logIn(email, password)
   }
 
   register(email: string, password: string, firstName: string, lastName: string) {

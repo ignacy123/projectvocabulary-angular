@@ -19,16 +19,11 @@ export class SignInComponent implements OnInit {
 
   logIn(){
     this.service.logIn(this.email.value, this.password.value)
-      .subscribe(
-        res => {
-          console.log(res);
+      .then(
+        () => {
 
           //TODO akcja wykonywana jeżeli ok
-          this.router.navigate(["/dashboard"], {
-            queryParams: {
-              id: res['id']
-            }
-          });
+          this.router.navigate(["/dashboard"]);
         },
         err => {
           console.log("Error occured");
