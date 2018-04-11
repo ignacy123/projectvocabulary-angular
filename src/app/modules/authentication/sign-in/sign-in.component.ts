@@ -21,8 +21,6 @@ export class SignInComponent implements OnInit {
     this.service.logIn(this.email.value, this.password.value)
       .then(
         () => {
-
-          //TODO akcja wykonywana jeżeli ok
           this.router.navigate(["/dashboard"]);
         },
         err => {

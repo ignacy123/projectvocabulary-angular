@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   }
   ngOnInit() {
     console.log(this.route);
-    this.apiService.userIdStream.subscribe(id => this.id = id)
+
   }
 
   logOut(){
@@ -37,12 +37,12 @@ export class DashboardComponent implements OnInit {
       );
   }
   getUserData(){
-    this.service.getUserData(this.id)
+    this.service.getUserData()
       .subscribe(
         res => {
           console.log(res);
 
-          //this.router.navigate(["/user-data"] TODO kolejny moduł
+          this.router.navigate(["/userdata"]);
 
         },
         err => {

@@ -5,7 +5,14 @@ import {Router, ActivatedRoute} from "@angular/router";
 @Injectable()
 export class DashboardService {
 
-  constructor(private api: ApiService, private route: ActivatedRoute) { }
+  constructor(private api: ApiService, private route: ActivatedRoute) {
+    this.api.getUserIdStream().subscribe(id => {
+      this.id = id
+      console.log(id)
+    })
+  }
+
+  id: number
 
 
   session(){
@@ -18,8 +25,8 @@ export class DashboardService {
     return this.api.post({}, "logout")
   }
 
-  getUserData(id: number){
-    return this.api.get("groups/get?groupId=2");
+  getUserData(){
+    return this.api.get("users/"+this.id.toString());
   }
 
 }

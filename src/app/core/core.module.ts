@@ -6,6 +6,7 @@ import {DeactivateGuard} from "utils/guards/deactivate.guard";
 import {TranslateModule, TranslateLoader, TranslateService} from "@ngx-translate/core";
 import {HttpClient} from "@angular/common/http";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {IsLoggedInGuard} from "utils/guards/is-logged-in.guard";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -26,7 +27,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
   ],
   declarations: [],
-  providers: [ApiService, DeactivateGuard]
+  providers: [ApiService, DeactivateGuard, IsLoggedInGuard]
 })
 
 export class CoreModule {

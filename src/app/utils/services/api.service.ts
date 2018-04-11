@@ -3,19 +3,24 @@ import {HttpClient} from "@angular/common/http";
 import {Subject} from "rxjs";
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/observable/from';
+import 'rxjs/add/operator/startWith';
+import {Router} from "@angular/router";
 
 @Injectable()
 export class ApiService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
+    this.get("dictionary/session").toPromise().then(() => this.isLoggedIn = true).catch(() => this.isLoggedIn = false)
   }
 
-  private _currentUserId: number;
+  private currentUserId: number;
 
-  private _userIdStream = new Subject(<number>);
+  private userIdStream = new Subject();
 
-  get userIdStream(): Subject {
-    return Observable.from(this._userIdStream);
+  public isLoggedIn: boolean = false;
+
+  getUserIdStream(): Observable<any> {
+    return Observable.from(this.userIdStream).startWith(this.currentUserId);
   }
 
   post(obj: any, path: string) {
@@ -34,10 +39,14 @@ export class ApiService {
         password: password
       }).subscribe(data => {
         if(data['id']){
-          this._userIdStream.next(data['id'])
+          this.userIdStream.next(data['id']);
+          console.log(data['id']);
+          this.currentUserId = data['id'];
+          this.isLoggedIn = true;
           resolve()
         }else {
           reject(data)
+          this.isLoggedIn = false;
         }
       }, error => {
         reject(error)
