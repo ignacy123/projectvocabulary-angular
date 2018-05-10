@@ -1,12 +1,12 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
 import {DashboardComponent} from "module/dashboard/dashboard.component";
-import {UserdataModule} from "module/userdata/userdata.module";
+import {UserdataComponent} from "module/dashboard/userdata/userdata.component";
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
+  { path: 'userdata', component: UserdataComponent},
   { path: '**', redirectTo: ''},
-  { path: '/userdata', component: UserdataModule}
 ];
 
 @NgModule({

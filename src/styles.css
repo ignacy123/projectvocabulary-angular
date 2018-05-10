@@ -341,4 +341,7 @@ html, body {
       overflow-y: auto;
       overflow-x: hidden; } }
 
+router-outlet > * {
+  overflow: auto; }
+
 /*# sourceMappingURL=styles.css.map */

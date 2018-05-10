@@ -1,0 +1,11 @@
+<div fxFlex="" fxLayout="column" fxLayoutAlign="space-around center" class="container full-width">
+    <ng-template [ngIf]="customUserData">
+      <p *ngFor="let item of objectKeys(customUserData)">
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="{{item}}" [(ngModel)]="customUserData[item]">
+        </mat-form-field>
+      </p>
+    </ng-template>
+  <button mat-button (click)="update()">Update</button>
+</div>

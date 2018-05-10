@@ -2,6 +2,6 @@
   <div fxLayout="row" fxLayoutAlign="space-around center" class="mid-width" >
     <button mat-raised-button color="primary" (click)="session()">SESSION</button>
     <button mat-raised-button color="primary" (click)="logOut()">Log out</button>
-    <button mat-raised-button color="primary" (click)="getUserData()">Get user data</button>
+    <a mat-raised-button color="primary" [routerLink]="['userdata']">Get user data</a>
   </div>
 </div>

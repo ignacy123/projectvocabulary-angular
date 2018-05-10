@@ -26,7 +26,7 @@ export class DashboardService {
   }
 
   getUserData(){
-    return this.api.get("users/"+this.id.toString());
+    return this.api.getUserData();
   }
 
 }

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {DashboardService} from "module/dashboard/services/dashboard.service";
-import {ApiService} from "utils/services/api.service";
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -9,7 +8,7 @@ import {ApiService} from "utils/services/api.service";
 })
 export class DashboardComponent implements OnInit {
   private id: number;
-  constructor(private service: DashboardService, private route: ActivatedRoute, private router: Router, private apiService: ApiService) {
+  constructor(private service: DashboardService, private route: ActivatedRoute, private router: Router) {
   }
   ngOnInit() {
     console.log(this.route);
@@ -36,26 +35,7 @@ export class DashboardComponent implements OnInit {
         }
       );
   }
-  getUserData(){
-    this.service.getUserData()
-      .subscribe(
-        res => {
-          console.log(res);
-
-          this.router.navigate(["/userdata"]);
-
-        },
-        err => {
-          console.log("Error occured");
-          if(err.status == 400){
-            alert("Incorrect credentials. Try again.");
-          }else {
-            alert("Connection failed. Try again later.")
-          }
-        }
-      );
-  }
   session(){
-    this.service.session()
+    console.log(this.service.session());
   }
 }
